@@ -30,4 +30,37 @@ describe('Collector', function() {
 
   });
 
+  xit ('should start with an empty collection of records', function(){
+
+  });
+
+  xit ('should be able to add a record to it’s collection', function(){
+
+
+  });
+
+  xit ('should be able to find a record by title', function(){
+
+
+  });
+
+  xit ('should be able to remove a record from it’s collection', function(){
+
+  });
+
+  xit ('should be able to buy a record if it has enough funds', function(){
+
+  });
+
+  xit ('should be able to sell a record if it has the record', function(){
+
+  });
+
+
+
+
+
+
+
+
 })
