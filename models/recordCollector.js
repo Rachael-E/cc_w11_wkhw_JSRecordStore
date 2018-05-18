@@ -11,6 +11,13 @@ RecordCollector.prototype.addRecord = function(recordToAdd) {
   this.ownedRecords.push(recordToAdd);
 }
 
+RecordCollector.prototype.findRecordByTitle = function(nameOfRecord) {
+  return this.ownedRecords.filter(record => record.title === nameOfRecord);
+
+};
+
+
+
 
 
 

@@ -12,13 +12,15 @@ describe('Collector', function() {
 
   beforeEach(function() {
 
-    record1 = new Record("Pina Colada", "Somebody", "Classic Rock", 3);
-    record2 = new Record("Another record", "Some dude", "Pop", 5);
-    record3 = new Record("A good song", "Dudette", "Classical", 10);
+    record1 = new Record({title: 'Pina Colada',
+    artist: 'Eagles',
+    genre: 'rock',
+    price: 1000
+  });
 
     collector = new RecordCollector();
 
-  })
+  });
 
   it ('should start with no funds', function(){
     const actual = collector.funds;
@@ -39,11 +41,21 @@ describe('Collector', function() {
 
   it ('should be able to add a record to it’s collection', function(){
     collector.addRecord(record1);
+    // console.log(collector.ownedRecords)
     assert.strictEqual(collector.ownedRecords.length, 1)
   });
 
-  xit ('should be able to find a record by title', function(){
-
+  it ('should be able to find a record by title', function(){
+    collector.addRecord(record1);
+    // const actual = [
+    //   record1
+    // ];
+    // assert.deepStrictEqual(actual, collector.findRecordByTitle('Pina Colada'));
+    const actual = collector.findRecordByTitle('Pina Colada');
+    // console.log(record1)
+    // console.log(collector.ownedRecords)
+    // console.log(collector.findRecordByTitle('Pina Colada'))
+    assert.deepStrictEqual(actual,[record1])
 
   });
 
