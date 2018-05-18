@@ -25,18 +25,21 @@ describe('Collector', function() {
     assert.strictEqual(actual, 0)
   });
 
-  xit ('should be able to add funds', function(){
+  it ('should be able to add funds', function(){
+    collector.addFunds(100);
+    assert.strictEqual(collector.funds, 100)
 
 
   });
 
-  xit ('should start with an empty collection of records', function(){
+  it ('should start with an empty collection of records', function(){
+    assert.strictEqual(collector.ownedRecords.length, 0)
 
   });
 
-  xit ('should be able to add a record to it’s collection', function(){
-
-
+  it ('should be able to add a record to it’s collection', function(){
+    collector.addRecord(record1);
+    assert.strictEqual(collector.ownedRecords.length, 1)
   });
 
   xit ('should be able to find a record by title', function(){

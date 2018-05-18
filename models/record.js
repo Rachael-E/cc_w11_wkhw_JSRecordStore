@@ -5,4 +5,5 @@ const Record = function (options) {
   this.price = options.price;
 };
 
+
 module.exports = Record;
