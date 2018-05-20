@@ -28,7 +28,8 @@ RecordCollector.prototype.removeRecord = function(recordToRemove) {
 
 RecordCollector.prototype.buyRecordIfFunds = function(recordToBuy) {
   if (this.funds >= recordToBuy.price){
-    this.addRecord(recordToBuy);}
+    this.addRecord(recordToBuy);
+    this.subtractFunds(recordToBuy.price)}
   };
 
 RecordCollector.prototype.sellRecordIfExists = function(recordToSell) {

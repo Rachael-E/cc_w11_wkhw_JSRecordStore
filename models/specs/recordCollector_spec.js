@@ -79,6 +79,7 @@ describe('Collector', function() {
     collector.addFunds(100);
     collector.buyRecordIfFunds(record1);
     assert.strictEqual(collector.ownedRecords.length, 1);
+    assert.strictEqual(collector.funds, 90);
   });
 
   it ('should not be able to buy a record if it does not have enough funds', function(){
@@ -91,9 +92,9 @@ describe('Collector', function() {
     collector.addRecord(record1);
     collector.addRecord(record2);
     collector.addRecord(record3);
-    console.log(collector.ownedRecords);
+    //console.log(collector.ownedRecords);
     collector.sellRecordIfExists(record1);
-    console.log(collector.ownedRecords);
+    //console.log(collector.ownedRecords);
     assert.strictEqual(collector.ownedRecords.length, 2);
     assert.strictEqual(collector.funds, 10);
 
