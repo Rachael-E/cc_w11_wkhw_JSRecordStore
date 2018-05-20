@@ -27,21 +27,21 @@ RecordCollector.prototype.buyRecordIfFunds = function(recordToBuy) {
     this.addRecord(recordToBuy);}
   };
 
-  RecordCollector.prototype.sellRecordIfExists = function(recordToSell) {
+RecordCollector.prototype.sellRecordIfExists = function(recordToSell) {
 
     let recordsAfterSale = [];
 
     for (const record of this.ownedRecords) {
       if (!recordsAfterSale.includes(recordToSell)){
         recordsAfterSale.push(recordToSell);
+        this.removeRecord(recordToSell);
+        this.addFunds(recordToSell.price);
       }
     }
 
-    this.removeRecord(recordToSell);
-    this.addfunds(recordToSell.price); // this line isn't working
+     // this line isn't working - 'typeerror: this.addfunds is not a function'
 
-  };
-
+};
 
 
 
@@ -55,4 +55,4 @@ RecordCollector.prototype.buyRecordIfFunds = function(recordToBuy) {
 
 
 
-  module.exports = RecordCollector;
+module.exports = RecordCollector;

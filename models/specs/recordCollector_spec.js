@@ -91,7 +91,7 @@ describe('Collector', function() {
     collector.sellRecordIfExists(record1);
     console.log(collector.ownedRecords);
     assert.strictEqual(collector.ownedRecords.length, 2);
-    // assert.strictEqual(collector.funds, 50);
+    assert.strictEqual(collector.funds, 10);
 
   });
 
