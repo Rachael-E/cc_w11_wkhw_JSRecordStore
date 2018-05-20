@@ -24,6 +24,12 @@ describe('Collector', function() {
     price: 20
     });
 
+    record3 = new Record({title: 'Whatcha Say',
+    artist: 'Jason Deruuuuulo',
+    genre: 'Pop',
+    price: 5
+    });
+
     collector = new RecordCollector();
 
   });
@@ -77,7 +83,15 @@ describe('Collector', function() {
     assert.strictEqual(collector.ownedRecords.length, 0);
   });
 
-  xit ('should be able to sell a record if it has the record', function(){
+  it ('should be able to sell a record if it has the record', function(){
+    collector.addRecord(record1);
+    collector.addRecord(record2);
+    collector.addRecord(record3);
+    console.log(collector.ownedRecords);
+    collector.sellRecordIfExists(record1);
+    console.log(collector.ownedRecords);
+    assert.strictEqual(collector.ownedRecords.length, 2);
+    // assert.strictEqual(collector.funds, 50);
 
   });
 
