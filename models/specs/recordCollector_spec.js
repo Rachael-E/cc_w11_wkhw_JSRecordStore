@@ -42,8 +42,12 @@ describe('Collector', function() {
   it ('should be able to add funds', function(){
     collector.addFunds(100);
     assert.strictEqual(collector.funds, 100)
+  });
 
-
+  it ('should be able to subtract funds', function(){
+    collector.addFunds(250)
+    collector.subtractFunds(75);
+    assert.strictEqual(collector.funds, 175)
   });
 
   it ('should start with an empty collection of records', function(){

@@ -7,6 +7,10 @@ RecordCollector.prototype.addFunds = function (amountToAdd) {
   return this.funds += amountToAdd;
 };
 
+RecordCollector.prototype.subtractFunds = function (amountToAdd) {
+  return this.funds -= amountToAdd;
+};
+
 RecordCollector.prototype.addRecord = function(recordToAdd) {
   this.ownedRecords.push(recordToAdd);
 };
@@ -38,8 +42,6 @@ RecordCollector.prototype.sellRecordIfExists = function(recordToSell) {
         this.addFunds(recordToSell.price);
       }
     }
-
-     // this line isn't working - 'typeerror: this.addfunds is not a function'
 
 };
 
